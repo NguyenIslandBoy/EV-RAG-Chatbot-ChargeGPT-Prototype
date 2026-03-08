@@ -82,7 +82,7 @@ Three-condition comparative evaluation across 30 questions:
 |---|---|---|---|---|
 | **A** | LLM only (no tools) | 13.3% | 0% | 12s |
 | **B** | LLM + RAG only | 33.3% | 0% | 29s |
-| **C** | Full system (RAG + SQL) | **86.7%** | **0%** | 114s |
+| **C** | Full system (RAG + SQL) | **90.0%** | **0%** | 114s |
 
 Per-category breakdown for Condition C:
 
