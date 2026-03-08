@@ -1,0 +1,45 @@
+# ── Credentials & secrets ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Data files (large / regenerable) ───────────────────────────
+data/acn_data.duckdb
+data/acn_checkpoint.json
+data/faiss/faiss_index.bin
+data/faiss/faiss_meta.json
+
+# ── Personal testing files ──────────────────────────────────────
+query_testing.py
+test_db.db
+testing_folder/
+structure.txt
+
+# ── Logs ───────────────────────────────────────────────────────
+logs/
+
+# ── Eval results (generated output, not source) ─────────────────
+eval/results/
+
+# ── Python cache ───────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# ── VS Code ────────────────────────────────────────────────────
+.vscode/
+
+# ── Continue.dev ───────────────────────────────────────────────
+.continue/
+
+# ── OS files ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Virtual environments ────────────────────────────────────────
+.venv/
+venv/
+env/

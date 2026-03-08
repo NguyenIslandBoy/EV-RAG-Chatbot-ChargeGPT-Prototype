@@ -1,0 +1,246 @@
+[
+  {
+    "id": "q01",
+    "question": "How many total charging sessions are in the dataset?",
+    "category": "sql_numerical",
+    "ground_truth": "66446",
+    "tolerance": 0.0,
+    "notes": "Count from sessions_features (filtered view)"
+  },
+  {
+    "id": "q02",
+    "question": "What is the total number of sessions at the Caltech site?",
+    "category": "sql_numerical",
+    "ground_truth": "31165",
+    "tolerance": 0.0,
+    "notes": "siteID = 0002"
+  },
+  {
+    "id": "q03",
+    "question": "What is the total number of sessions at the JPL site?",
+    "category": "sql_numerical",
+    "ground_truth": "33618",
+    "tolerance": 0.0,
+    "notes": "siteID = 0001"
+  },
+  {
+    "id": "q04",
+    "question": "What is the average energy delivered per session in kWh across all sites?",
+    "category": "sql_numerical",
+    "ground_truth": "11.85",
+    "tolerance": 0.05,
+    "notes": "5% tolerance for rounding"
+  },
+  {
+    "id": "q05",
+    "question": "Which hour of the day has the highest number of charging sessions on weekdays?",
+    "category": "sql_numerical",
+    "ground_truth": "15",
+    "tolerance": 0.0,
+    "notes": "Peak hour is 15 (3pm)"
+  },
+  {
+    "id": "q06",
+    "question": "How many sessions were recorded on weekdays versus weekends?",
+    "category": "sql_numerical",
+    "ground_truth": "60538",
+    "tolerance": 0.02,
+    "notes": "Weekday count — primary value to check. Weekend: 5908"
+  },
+  {
+    "id": "q07",
+    "question": "What is the average session duration in hours?",
+    "category": "sql_numerical",
+    "ground_truth": "6.1",
+    "tolerance": 0.05,
+    "notes": "Includes idle time — sessions often stay plugged in after charging"
+  },
+  {
+    "id": "q08",
+    "question": "Which site has the highest average energy delivered per session?",
+    "category": "sql_categorical",
+    "ground_truth": "0019",
+    "tolerance": 0.0,
+    "notes": "Office 1 (0019) has highest avg kWh at 16.96 — accept 0019 or Office 1"
+  },
+  {
+    "id": "q09",
+    "question": "How many unique charging stations are in the dataset?",
+    "category": "sql_numerical",
+    "ground_truth": "115",
+    "tolerance": 0.0,
+    "notes": "COUNT(DISTINCT stationID) from sessions_features"
+  },
+  {
+    "id": "q10",
+    "question": "What is the total energy delivered across all sessions in kWh?",
+    "category": "sql_numerical",
+    "ground_truth": "787322",
+    "tolerance": 0.02,
+    "notes": "SUM(kWhDelivered) — 2% tolerance"
+  },
+  {
+    "id": "q11",
+    "question": "What season has the highest number of sessions at Caltech?",
+    "category": "sql_categorical",
+    "ground_truth": "summer",
+    "tolerance": 0.0,
+    "notes": "summer (10403 sessions)"
+  },
+  {
+    "id": "q12",
+    "question": "What percentage of sessions have user-provided energy requests?",
+    "category": "sql_numerical",
+    "ground_truth": "72.7",
+    "tolerance": 0.05,
+    "notes": "Claimed sessions proportion"
+  },
+  {
+    "id": "q13",
+    "question": "What is the average idle time in hours across all sessions?",
+    "category": "sql_numerical",
+    "ground_truth": "2.7",
+    "tolerance": 0.1,
+    "notes": "Idle = time plugged in after charging completed"
+  },
+  {
+    "id": "q14",
+    "question": "Which day of the week has the most charging sessions across all sites?",
+    "category": "sql_numerical",
+    "ground_truth": "2",
+    "tolerance": 0.0,
+    "notes": "day_of_week=2 (Tuesday in DuckDB where Monday=1). Accept 2 or Tuesday"
+  },
+  {
+    "id": "q15",
+    "question": "What is the average charge rate in kW across all sessions?",
+    "category": "sql_numerical",
+    "ground_truth": "2.85",
+    "tolerance": 0.05,
+    "notes": "avg_charge_rate_kw from sessions_features"
+  },
+  {
+    "id": "q16",
+    "question": "What is ACN-Data and where was it collected?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["Caltech", "JPL", "workplace", "PowerFlex", "California"],
+    "min_keywords_matched": 3,
+    "notes": "Should mention both sites and operator"
+  },
+  {
+    "id": "q17",
+    "question": "What is the Adaptive Charging Network and how does it work?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["scheduling", "algorithm", "capacity", "departure", "energy", "infrastructure"],
+    "min_keywords_matched": 3,
+    "notes": "Methodology — scheduling algorithm"
+  },
+  {
+    "id": "q18",
+    "question": "What is driver laxity in the context of EV charging?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["flexibility", "duration", "energy", "charging rate", "laxity"],
+    "min_keywords_matched": 3,
+    "notes": "Technical definition from paper"
+  },
+  {
+    "id": "q19",
+    "question": "What are the main limitations of the ACN-Data dataset?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["workplace", "California", "PowerFlex", "residential", "geographic"],
+    "min_keywords_matched": 3,
+    "notes": "Scope limits"
+  },
+  {
+    "id": "q20",
+    "question": "What is the difference between claimed and unclaimed sessions?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["user", "mobile", "app", "QR", "input", "departure"],
+    "min_keywords_matched": 3,
+    "notes": "Data collection methodology"
+  },
+  {
+    "id": "q21",
+    "question": "How does pricing affect EV charging behaviour at Caltech?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["paid", "free", "sessions", "decrease", "November", "community"],
+    "min_keywords_matched": 3,
+    "notes": "Policy analysis from paper"
+  },
+  {
+    "id": "q22",
+    "question": "What are the peak charging hours and why does that pattern occur?",
+    "category": "both",
+    "ground_truth_sql": "14",
+    "ground_truth_keywords": ["workplace", "arrival", "morning", "schedule", "workday"],
+    "min_keywords_matched": 2,
+    "notes": "Hybrid — data answer + contextual explanation"
+  },
+  {
+    "id": "q23",
+    "question": "How does utilization differ between weekdays and weekends and what explains the difference?",
+    "category": "both",
+    "ground_truth_sql": "60538",
+    "ground_truth_keywords": ["workplace", "JPL", "weekend", "employees", "campus"],
+    "min_keywords_matched": 2,
+    "notes": "Hybrid — quantitative difference + contextual explanation"
+  },
+  {
+    "id": "q24",
+    "question": "What is the carbon intensity of EV charging?",
+    "category": "out_of_scope",
+    "expected_behaviour": "refuse_or_explain",
+    "ground_truth_keywords": ["not available", "carbon", "grid", "dataset", "not contain"],
+    "min_keywords_matched": 1,
+    "notes": "Must decline — NOT hallucinate a number"
+  },
+  {
+    "id": "q25",
+    "question": "What are the emissions implications of increased EV charging demand?",
+    "category": "out_of_scope",
+    "expected_behaviour": "refuse_or_explain",
+    "ground_truth_keywords": ["not available", "carbon", "grid", "emissions", "Duck Curve"],
+    "min_keywords_matched": 1,
+    "notes": "Must decline or explain limitation"
+  },
+  {
+    "id": "q26",
+    "question": "What is the average session duration at JPL on weekdays?",
+    "category": "sql_numerical",
+    "ground_truth": "6.9",
+    "tolerance": 0.05,
+    "notes": "JPL weekday duration including idle time"
+  },
+  {
+    "id": "q27",
+    "question": "How many sessions occurred in summer across all sites?",
+    "category": "sql_numerical",
+    "ground_truth": "18491",
+    "tolerance": 0.02,
+    "notes": "Summer season filter"
+  },
+  {
+    "id": "q28",
+    "question": "What is the busiest charging hour at the JPL site?",
+    "category": "sql_numerical",
+    "ground_truth": "14",
+    "tolerance": 0.0,
+    "notes": "JPL peak is also 14 (2pm) — same as Caltech"
+  },
+  {
+    "id": "q29",
+    "question": "How does EV charging data help smooth the Duck Curve?",
+    "category": "rag_conceptual",
+    "ground_truth_keywords": ["Duck Curve", "solar", "ramping", "grid", "demand", "adaptive"],
+    "min_keywords_matched": 3,
+    "notes": "Grid integration concept from paper"
+  },
+  {
+    "id": "q30",
+    "question": "What is the average number of sessions per EVSE per day at Caltech?",
+    "category": "sql_numerical",
+    "ground_truth": "1.48",
+    "tolerance": 0.05,
+    "notes": "From daily_evse_utilization — sessions_per_day column"
+  }
+]
